@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+h2 {
+    font-size: 32px;
+    color: #818CF8;
+    margin: 0;
+}
+h3 {
+    font-size: 24px;
+    color:#444;
+}
+p {
+    font-size: 20px;
+    opacity: 0.9;
+    color: #334155;
+    line-height: 28px;
+}
+ul {
+    color: #334155;
+    font-size: 20px;
+    opacity: 0.9;
+    line-height: 30px;
+    padding-left: 20px;
+
+}
+
+body {
+    margin: 0;
+    background: #f9f9f9;
+    
+}
+.container {
+    max-width: 744px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+hr {
+    border-style: dotted;
+    border-width: 1px;
+    color: #D1D5DB;
+    width: 100%;
+    border-radius: 6px;
+    border-color: #D1D5DB;
+    margin: 0px;
+}
