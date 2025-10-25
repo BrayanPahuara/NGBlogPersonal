@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './contacto.css'
 })
 export class Contacto {
-
+  copiarCorreo() {
+    const correo = "02hxbrayan@gmail.com";
+    navigator.clipboard.writeText(correo).then(() => {
+        alert("Correo copiado: " + correo);
+        });
+      }
 }

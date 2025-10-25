@@ -1,1 +1,25 @@
-<p>contacto works!</p>
+<main class="container">
+    <section class="contacto">
+    <div class="redes">
+        <h2>Redes sociales</h2>
+        <a href="https://github.com/BrayanPahuara" target="_blank" class="github">
+            <img src="images/iconos/github-64.webp" alt="GitHub">
+            <span>GitHub</span>
+        </a>
+    </div>
+    <div class="correo">
+        <h2>Correo electrónico</h2>
+        <div class="correo-box">
+            <span id="miCorreo">02hxbrayan@gmail.com</span>
+            <div class="acciones">
+                <a href="mailto:02hxbrayan@gmail.com" class="btn">
+                    <img src="images/iconos/enviar-64.webp" alt="Enviar correo">
+                </a>
+                <button (click)="copiarCorreo()" class="btn">  <!-- el onclick no sirve en angular, se usa (click) -->
+                    <img src="images/iconos/copiar-64.webp" alt="Copiar correo">
+                </button>
+            </div>
+        </div>
+    </div>
+    </section>
+</main>

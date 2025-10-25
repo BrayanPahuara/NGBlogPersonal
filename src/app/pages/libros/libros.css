@@ -1,0 +1,49 @@
+.grid-libros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+    margin-top: 24px;
+}
+.libro{
+    background: rgb(255, 255, 255);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.libro img{
+    width: 160px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.libro h3{
+    margin: 0;
+    text-align: center;
+}
+.libro p{
+    margin: 0;
+    line-height: 1.4;
+}
+.btn-libro{
+    margin-top: auto;
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 16px;
+
+    padding: 9px 18px;
+    background: #000000;
+
+}
+.btn-libro:hover{
+    border-color: #000;
+    background: #111;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
