@@ -2,11 +2,11 @@
 <section class="intereses">
     <h2>Mis Intereses</h2>
     <ul>
-        <li>Desarrollo Web</li>
-        <li>Leer libros</li>
-        <li>Hacer deporte</li>
-        <li>Jugar ajedrez</li>
-        <li>Aprender sobre tecnologías</li>
+        @for (interes of intereses; track interes) {
+        <li [ngClass]="{'interes-destacado': interes.destacado}">
+            {{interes.nombre | agregarEmoji}}
+        </li>
+        }
     </ul>
 </section>
 </main>
