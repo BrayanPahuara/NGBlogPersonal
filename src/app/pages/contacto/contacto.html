@@ -2,7 +2,7 @@
     <section class="contacto">
     <div class="redes">
         <h2>Redes sociales</h2>
-        <a href="https://github.com/BrayanPahuara" target="_blank" class="github">
+        <a [href]="urlGithub" target="_blank" class="github">
             <img src="images/iconos/github-64.webp" alt="GitHub">
             <span>GitHub</span>
         </a>
@@ -11,8 +11,9 @@
         <h2>Correo electrónico</h2>
         <div class="correo-box">
             <span id="miCorreo">02hxbrayan@gmail.com</span>
+
             <div class="acciones">
-                <a href="mailto:02hxbrayan@gmail.com" class="btn">
+                <a [href]="'mailto:02hxbrayan@gmail.com?subject='+ asunto" class="btn" title="Enviar correo con asunto">
                     <img src="images/iconos/enviar-64.webp" alt="Enviar correo">
                 </a>
                 <button (click)="copiarCorreo()" class="btn">  <!-- el onclick no sirve en angular, se usa (click) -->
@@ -20,9 +21,23 @@
                 </button>
             </div>
         </div>
+        <div class="asunto-ngModel">
+        <input 
+            type = "text"
+            [(ngModel)]="asunto"
+            placeholder="Escribe el asunto de tu mensaje..."
+            class = "input-asunto"
+            >
+        @if (asunto) {
+            <p class = "vista-previa-asunto">
+                Asunto: <strong>{{asunto}}</strong>
+            </p>
+        }
+    </div>
         @if (correoCopiado) {
             <p class="mensaje-exito">¡Copiado!</p>
         }
     </div>
+
     </section>
 </main>
