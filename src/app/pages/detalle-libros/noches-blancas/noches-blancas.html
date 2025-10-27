@@ -1,39 +1,37 @@
 <main class="container">
-    <section class="detalle-libro">
-        <div class="info-libro">
-            <h2>Noches Blancas</h2>
-            <p><strong>Autor:</strong> Fiódor Dostoievski</p>
-            <table class="detalle-datos">
-                <tr>
-                    <th>Genero</th>
-                    <td>Novela romantica / relato corto</td>
-                </tr>
-                <tr>
-                    <th>Idioma original</th>
-                    <td>Ruso</td>
-                </tr>
-                <tr>
-                    <th>Año de publicación</th>
-                    <td>1848</td>
-                </tr>
-                <tr>
-                    <th>País</th>
-                    <td>Rusia</td>
-                </tr>
-            </table>
-        </div>
-        <div class="portada-libro">
-            <img src="/images/libros/noches-blancas.webp" alt="Portada del libro Noches Blancas">
-        </div>
-    </section>
-    <section class="reseña">
-        <h3>Reseña personal</h3>
-        <p>“Noches Blancas” es una obra corta pero cargada de emociones. 
-    Lo que más me marcó es cómo refleja la soledad y los sueños de un joven que anhela compañía y amor, 
-    pero que se enfrenta a la realidad de manera dura y melancólica. 
-    Es un libro que te hace pensar en las ilusiones que construimos y en cómo, a veces, se desvanecen con la misma rapidez con la que aparecieron.</p>
-    </section>
-    <div class="boton-atras">
-        <a href="/libros">← Volver a Libros</a>
-    </div>
+    @if (libro){
+        <section class="detalle-libro">
+            <div class="info-libro">
+                <h2>{{libro.titulo}}</h2>
+                <p><strong>Autor:</strong> {{libro.autor}}</p>
+                <table class="detalle-datos">
+                    <tr>
+                        <th>Genero</th>
+                        <td>{{libro.tabla.genero}}</td>
+                    </tr>
+                    <tr>
+                        <th>Idioma original</th>
+                        <td>{{libro.tabla.idioma}}</td>
+                    </tr>
+                    <tr>
+                        <th>Año de publicación</th>
+                        <td>{{libro.tabla.anio}}</td>
+                    </tr>
+                    <tr>
+                        <th>País</th>
+                        <td>{{libro.tabla.pais}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="portada-libro">
+                <img [src]="libro.imagen" [alt]="'Portada del libro ' + libro.titulo">
+            </div>
+        </section>
+        <section class = "reseña">
+            <h3>Reseña personal</h3>
+            <p [innerHTML]="libro.resenia"></p>
+        </section>
+        <div class="boton-atras">
+            <a href="/libros">← Volver a Libros</a>
+        </div>}
 </main>

@@ -2,48 +2,15 @@
     <section class="libros">
         <h2>Algunos de mis libros favoritos</h2>
         <div class="grid-libros">
-            <article class="libro">
-                <img src="/images/libros/noches-blancas.webp" alt="Noches Blancas">
-                <h3>📖 Noches Blancas</h3>
-                <p><strong>👤 Fiódor Dostoievski</strong></p>
-                <p>💬 Un relato breve pero muy intenso que me hizo reflexionar sobre la soledad y los sueños no cumplidos.</p>
-                <a href="libros/noches-blancas" class="btn-libro">Ver más</a>
-            </article>
-            <article class="libro">
-                <img src="/images/libros/el-extranjero.webp" alt="El Extranjero">
-                <h3>📖 El Extranjero</h3>
-                <p><strong>👤 Albert Camus</strong></p>
-                <p>💬 Un libro que me hizo reflexionar sobre la indiferencia de la vida y el sentido de nuestras decisiones.</p>
-                <a href="/libros/el-extranjero" class="btn-libro">Ver más</a>
-            </article>
-            <article class="libro">
-                <img src="/images/libros/un-mundo-feliz.webp" alt="Un Mundo Feliz">
-                <h3>📖 Un Mundo Feliz</h3>
-                <p><strong>👤 Aldous Huxley</strong></p>
-                <p>💬 Una novela que muestra un futuro controlado por la tecnología y la manipulación social.</p>
-                    <a href="/libros/un-mundo-feliz" class="btn-libro">Ver más</a>
-            </article>
-            <article class="libro">
-                <img src="/images/libros/un-mundo-julius.webp" alt="Un Mundo para Julius">
-                <h3>📖 Un Mundo para Julius</h3>
-                <p><strong>👤 Alfredo Bryce Echenique</strong></p>
-                <p>💬 Una mirada tierna y crítica a la sociedad peruana, contada a través de los ojos de un niño.</p>
-                <a href="/libros/un-mundo-julius" class="btn-libro">Ver más</a>
-            </article>
-            <article class="libro">
-                <img src="/images/libros/crimen-castigo.webp" alt="Crimen y Castigo">
-                <h3>📖 Crimen y Castigo</h3>
-                <p><strong>👤 Fiódor Dostoievski</strong></p>
-                <p>💬 Una obra intensa sobre la culpa, la justicia y la redención que me atrapó desde el inicio.</p>
-                <a href="/libros/crimen-castigo" class="btn-libro">Ver más</a>
-            </article>
-            <article class="libro">
-                <img src="/images/libros/rebelion-granja.webp" alt="Rebelión en la Granja">
-                <h3>📖 Rebelión en la Granja</h3>
-                <p><strong>👤 George Orwell</strong></p>
-                <p>💬 Una fábula donde los animales de una granja se rebelan contra los humanos, mostrando la corrupción del poder.</p>
-                <a href="/libros/rebelion-granja" class="btn-libro">Ver más</a>
-            </article>
+            @for (libro of misLibros; track libro.id) {
+                <article class="libro">
+                    <img [src]="libro.imagen" [alt]="libro.titulo">
+                    <h3>📖 {{libro.titulo}}</h3>
+                    <p><strong>👤 {{libro.autor}}</strong></p>
+                    <p>💬 {{libro.resumen}}</p>
+                    <a [href]="'/libros/' + libro.id" class="btn-libro">Ver más</a>
+                </article>
+            }
         </div>
     </section>
 </main>
