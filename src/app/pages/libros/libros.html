@@ -1,16 +1,15 @@
 <main class="container">
     <section class="libros">
         <h2>Algunos de mis libros favoritos</h2>
+        @if (tituloSeleccionado){
+            <p class="libro-seleccionado-info">
+                Has seleccionado: <strong>{{ tituloSeleccionado }}</strong>
+            </p>
+        }
         <div class="grid-libros">
             @for (libro of misLibros; track libro.id) {
-                <article class="libro">
-                    <img [src]="libro.imagen" [alt]="libro.titulo">
-                    <h3>📖 {{libro.titulo}}</h3>
-                    <p><strong>👤 {{libro.autor}}</strong></p>
-                    <p>💬 {{libro.resumen}}</p>
-                    <a [href]="'/libros/' + libro.id" class="btn-libro">Ver más</a>
-                </article>
-            }
+            <app-libro-card
+            [libro]="libro"  (libroSeleccionado)="manejarSeleccion($event)"> </app-libro-card>}
         </div>
     </section>
 </main>

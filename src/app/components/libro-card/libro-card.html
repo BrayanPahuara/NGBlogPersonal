@@ -1,0 +1,11 @@
+<article class="libro">
+    <img [src]="libro.imagen" [alt]="libro.titulo">
+    <h3>📖 {{libro.titulo}}</h3>
+    <p><strong>👤 {{libro.autor}}</strong></p>
+    <p>💬 {{libro.resumen}}</p>
+    
+    <div class="botones-card">
+        <a [href]="'/libros/' + libro.id" class="btn-libro">Ver más</a>
+        <button (click)="seleccionarLibro()" class="btn-seleccionar">Seleccionar</button>
+    </div>
+</article>
