@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LibrosService } from '../../services/libros';
 import { Libro } from '../../services/libros';
 import { CommonModule } from '@angular/common';
@@ -11,14 +11,23 @@ import { LibroCard } from '../../components/libro-card/libro-card';
   templateUrl: './libros.html',
   styleUrl: './libros.css'
 })
-export class Libros {
+
+export class Libros implements OnInit{
   misLibros: Libro[] = [];
-  public tituloSeleccionado: string | null = null;
+  tituloSeleccionado: string | null = null;
+  cargando: boolean = true;
+
   constructor(private librosService: LibrosService){
-    this.misLibros = this.librosService.getLibros();
   }
-  manejarSeleccion(idLibro: string){
-    const libroEncontrado = this.librosService.getLibroById(idLibro);
+
+  async ngOnInit() {
+      console.log('Iniciando carga de libros...');
+      this.misLibros = await this.librosService.getLibros();
+      this.cargando = false;
+      console.log('Libros cargados:', this.misLibros);
+  }
+  async manejarSeleccion(idLibro: string){
+    const libroEncontrado = await this.librosService.getLibroById(idLibro);
     this.tituloSeleccionado = libroEncontrado ? libroEncontrado.titulo : null;
   }
 }

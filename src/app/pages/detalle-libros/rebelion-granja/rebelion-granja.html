@@ -1,4 +1,7 @@
 <main class="container">
+        @if (cargando) {
+            <p class="mensaje-carga">Cargando detalles del libro...</p>
+        } @else{
         @if (libro){
         <section class="detalle-libro">
             <div class="info-libro">
@@ -34,4 +37,5 @@
         <div class="boton-atras">
             <a href="/libros">← Volver a Libros</a>
         </div>}
+    }
 </main>

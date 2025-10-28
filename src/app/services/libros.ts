@@ -150,12 +150,21 @@ export class LibrosService {
 ];
   constructor(){ }
 
-  getLibros():Libro[]{
-    return this.libros;
+  getLibros():Promise<Libro[]>{
+    return new Promise((resolve)=>{
+    setTimeout(()=> {
+      resolve(this.libros);
+    },500);  
+    });
   }
 
-  getLibroById(id: string): Libro | undefined {
-    return this.libros.find(libro => libro.id === id);
-  }
+  getLibroById(id: string): Promise<Libro | undefined> {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        const libroEncontrado = this.libros.find(libro => libro.id === id);
+        resolve(libroEncontrado);
+      }, 1000);
+    });
+  };
 }
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LibrosService } from '../../../services/libros';
 import { Libro } from '../../../services/libros';
 import { CommonModule } from '@angular/common';
@@ -9,9 +9,16 @@ import { CommonModule } from '@angular/common';
   templateUrl: './el-extranjero.html',
   styleUrl: './el-extranjero.css'
 })
-export class ElExtranjero {
+export class ElExtranjero implements OnInit{
   libro?: Libro;
+  cargando: boolean = true;
+
   constructor(private librosService: LibrosService) {
-    this.libro = this.librosService.getLibroById('el-extranjero');
+    
+  }
+
+  async ngOnInit() {
+      this.libro = await this.librosService.getLibroById('el-extranjero');
+      this.cargando = false;
   }
 }

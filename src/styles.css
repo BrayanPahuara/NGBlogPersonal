@@ -45,3 +45,10 @@ hr {
     border-color: #D1D5DB;
     margin: 0px;
 }
+
+.mensaje-carga {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 1.2em;
+    color: #6b7280; 
+}

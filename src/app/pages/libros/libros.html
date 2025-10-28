@@ -1,15 +1,19 @@
 <main class="container">
     <section class="libros">
         <h2>Algunos de mis libros favoritos</h2>
-        @if (tituloSeleccionado){
-            <p class="libro-seleccionado-info">
-                Has seleccionado: <strong>{{ tituloSeleccionado }}</strong>
-            </p>
+        @if (cargando){
+            <p class="mensaje-carga">Cargando libros...</p>
+        } @else {
+            @if (tituloSeleccionado){
+                <p class="libro-seleccionado-info">
+                    Has seleccionado: <strong>{{ tituloSeleccionado }}</strong>
+                </p>
+            }
+            <div class="grid-libros">
+                @for (libro of misLibros; track libro.id) {
+                <app-libro-card
+                [libro]="libro"  (libroSeleccionado)="manejarSeleccion($event)"> </app-libro-card>}
+            </div>
         }
-        <div class="grid-libros">
-            @for (libro of misLibros; track libro.id) {
-            <app-libro-card
-            [libro]="libro"  (libroSeleccionado)="manejarSeleccion($event)"> </app-libro-card>}
-        </div>
     </section>
 </main>
