@@ -5,7 +5,7 @@
     <p>💬 {{libro.resumen}}</p>
     
     <div class="botones-card">
-        <a [href]="'/libros/' + libro.id" class="btn-libro">Ver más</a>
+        <a [routerLink]="['/libros/', libro.id]" class="btn-libro">Ver más</a>
         <button (click)="seleccionarLibro()" class="btn-seleccionar">Seleccionar</button>
     </div>
 </article>
